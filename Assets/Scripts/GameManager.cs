@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-  private void MoveObject(IEngine movableObject)
+    /// <summary>
+    /// Moves an object implementing the IMovable interface.
+    /// </summary>
+    /// <param name="movableObject">The object to be moved.</param>
+    private void MoveObject(IMovable movableObject)
     {
         movableObject.Move();
     }
