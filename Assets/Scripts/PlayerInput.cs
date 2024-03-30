@@ -20,7 +20,7 @@ public class PlayerInput : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
         // Retrieve horizontal input from player
         float horizontalInput = Input.GetAxis("Horizontal");

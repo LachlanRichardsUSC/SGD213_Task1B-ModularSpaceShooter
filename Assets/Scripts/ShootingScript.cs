@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Handles shooting behavior for the GameObject, allowing it to spawn bullets with a specified delay between shots.
+/// </summary>
+
 public class ShootingScript : MonoBehaviour
 {
     // The bullet prefab to be spawned
