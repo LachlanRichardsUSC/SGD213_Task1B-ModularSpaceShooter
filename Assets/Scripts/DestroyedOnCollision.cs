@@ -11,8 +11,11 @@ public enum TagListType
 
 public class DestroyedOnCollision : MonoBehaviour
 {
-    [SerializeField] private TagListType tagListType = TagListType.Blacklist;
-    [SerializeField] private List<string> tags = new List<string>();
+    [SerializeField]
+    private TagListType tagListType = TagListType.Blacklist;
+
+    [SerializeField]
+    private List<string> tags = new List<string>();
 
     private void OnTriggerEnter2D(Collider2D other)
     {

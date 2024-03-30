@@ -6,5 +6,6 @@ using UnityEngine;
 public interface IMovable
 {
     // Method to move the object according to its defined behavior.
-    void Move();
+    void MoveForward();
+    void Acceleration();
 }

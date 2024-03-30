@@ -18,26 +18,26 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // Retrieve horizontal input from player.
+        // Retrieve horizontal input from player
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        // Call horizontal movement function if there's input.
+        // Call horizontal movement function if there's input
         if (horizontalInput != 0.0f)
         {
             playerMovementScript.horizontalMovement(horizontalInput);
         }
 
-        // Check for fire input.
+        // Check for fire input
         if (Input.GetButton("Fire1"))
         {
-            // Ensure shooting script is available.
+            // Ensure shooting script is available
             if (shootingScript != null)
             {
                 shootingScript.Shoot();
             }
             else
             {
-                // Log a message if shooting script is missing.
+                // Log a message if shooting script is missing
                 Debug.Log("Please attach the Shooting Script!");
             }
         }

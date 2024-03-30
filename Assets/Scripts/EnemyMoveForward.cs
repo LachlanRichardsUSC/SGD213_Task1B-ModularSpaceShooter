@@ -3,32 +3,32 @@ using System.Collections;
 
 public class EnemyMoveForward : MonoBehaviour, IMovable
 {
-    // The acceleration rate of the enemy.
+    // The acceleration rate of the enemy
+    [SerializeField]
     private float acceleration = 75f;
 
-    // The initial velocity of the enemy.
+    // The initial velocity of the enemy
+    [SerializeField]
     private float initialVelocity = 2f;
 
-    // The Rigidbody2D component attached to the enemy object.
+    // The Rigidbody2D component attached to the enemy object
     private Rigidbody2D rb;
 
     // initialization
     void Start()
     {
-        // Get the Rigidbody2D component attached to this object.
+        // Get the Rigidbody2D component attached to this object
         rb = GetComponent<Rigidbody2D>();
+    }
 
-        // Set the initial velocity of the enemy to move downward.
+    public void MoveForward()
+    {
         rb.velocity = Vector2.down * initialVelocity;
     }
 
-    // Implements the movement behavior defined in the IMovable interface.
-    public void Move()
+    public void Acceleration()
     {
-        // Calculate the force to add to the enemy to simulate acceleration.
         Vector2 ForceToAdd = Vector2.down * acceleration * Time.deltaTime;
-
-        // Apply the calculated force to the Rigidbody2D component of the enemy.
         rb.AddForce(ForceToAdd);
     }
 }
