@@ -2,42 +2,47 @@
 using System.Collections;
 using System.Collections.Generic;
 
+// Define an enumeration to represent different types of tag lists
 public enum TagListType
 {
-    Blacklist,
-    Whitelist
+    Blacklist, 
+    Whitelist  
 }
 
 public class DestroyedOnCollision : MonoBehaviour
 {
+    [SerializeField] private TagListType tagListType = TagListType.Blacklist;
+    [SerializeField] private List<string> tags = new List<string>();
 
-    [SerializeField]
-    private TagListType tagListType = TagListType.Blacklist;
-
-    // A list of tags which we use to determine whether to explode or not
-    // Depending on the tagListType (Blacklist or Whitelist)
-    [SerializeField]
-    private List<string> tags;
-
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        // Check if the tag of the colliding object is in the list of tags
         bool tagInList = tags.Contains(other.gameObject.tag);
 
-        if (tagListType == TagListType.Blacklist 
-            && tagInList)
+        // Use a switch statement to determine behavior based on tagListType
+        switch (tagListType)
         {
-            // Destroy if it's a Blacklist and the tag IS in the Blacklist
-            Destroy(gameObject);
-        }
-        else if (tagListType == TagListType.Whitelist 
-            && !tagInList)
-        {
-            // Destroy if it's a Whitelist and the tag is NOT in the Whitelist
-            Destroy(gameObject);
-        }
-        else
-        {
-            // Use default collision code
+            // If tagListType is Blacklist...
+            case TagListType.Blacklist:
+                // Check if the tag is in the list
+                if (tagInList)
+                {
+                    // If so, destroy the game object
+                    Destroy(gameObject);
+                }
+                // Exit the switch statement
+                break;
+
+            // If tagListType is Whitelist...
+            case TagListType.Whitelist:
+                // Check if the tag is NOT in the list
+                if (!tagInList)
+                {
+                    // If so, destroy the game object
+                    Destroy(gameObject);
+                }
+                // Exit the switch statement
+                break;
         }
     }
 }
