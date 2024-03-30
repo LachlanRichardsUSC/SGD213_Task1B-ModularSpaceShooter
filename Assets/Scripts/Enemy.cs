@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyMoveForward : MonoBehaviour, IMovable
+public class Enemy : MonoBehaviour, IMovable
 {
     // The acceleration rate of the enemy
     [SerializeField]

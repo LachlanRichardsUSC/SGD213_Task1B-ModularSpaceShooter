@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletMoveForward : MonoBehaviour, IMovable
+public class Bullet : MonoBehaviour, IMovable
 {
     // The acceleration rate of the bullet projectile
     [SerializeField]
