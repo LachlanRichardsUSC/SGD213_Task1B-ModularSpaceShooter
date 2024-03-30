@@ -12,7 +12,7 @@ public class BulletMoveForward : MonoBehaviour, IMovable
     // The Rigidbody2D component attached to the bullet projectile.
     private Rigidbody2D rb;
 
-    // initialization
+    // Initialization
     void Start()
     {
         // Get the Rigidbody2D component attached to this object.
