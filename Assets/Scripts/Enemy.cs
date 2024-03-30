@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Represents an enemy object that can be moved and accelerated.
+/// </summary>
+
 public class Enemy : MonoBehaviour, IMovable
 {
     // The acceleration rate of the enemy
@@ -21,14 +25,16 @@ public class Enemy : MonoBehaviour, IMovable
         rb = GetComponent<Rigidbody2D>();
     }
 
+    // Moves the enemy downward
     public void MoveForward()
     {
         rb.velocity = Vector2.down * initialVelocity;
     }
 
-    public void Acceleration()
+    // Applies downward acceleration to the enemy
+    public void ApplyAcceleration()
     {
-        Vector2 ForceToAdd = Vector2.down * acceleration * Time.deltaTime;
-        rb.AddForce(ForceToAdd);
+        Vector2 forceToAdd = Vector2.down * acceleration * Time.deltaTime;
+        rb.AddForce(forceToAdd);
     }
 }

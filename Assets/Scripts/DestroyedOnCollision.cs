@@ -2,12 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 
-// Define an enumeration to represent different types of tag lists
+
+
+/// <summary>
+/// Define an enumeration to represent different types of tag lists.
+/// </summary>s
+
 public enum TagListType
 {
     Blacklist, 
     Whitelist  
 }
+
+/// <summary>
+/// Destroys the GameObject on collision with objects based on tag lists (blacklist or whitelist).
+/// </summary>
 
 public class DestroyedOnCollision : MonoBehaviour
 {

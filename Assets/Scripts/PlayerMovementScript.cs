@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Handles horizontal movement behavior for the player GameObject, applying force to its Rigidbody2D component.
+/// </summary>
+
 public class PlayerMovementScript : MonoBehaviour 
 {
    // SerializeField exposes this value to the Editor, not other scripts

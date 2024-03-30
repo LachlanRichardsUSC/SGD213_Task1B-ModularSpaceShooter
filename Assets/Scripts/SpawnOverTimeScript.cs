@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Spawns objects over time within a specified delay, based on the renderer bounds of the spawner object.
+/// </summary>
+
+
 public class SpawnOverTimeScript : MonoBehaviour
 {
     // Object to spawn

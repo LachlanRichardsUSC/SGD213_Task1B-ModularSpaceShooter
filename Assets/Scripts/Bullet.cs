@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Represents the projectile object that can be moved and accelerated.
+/// </summary>
+
 public class Bullet : MonoBehaviour, IMovable
 {
     // The acceleration rate of the bullet projectile
@@ -20,23 +24,19 @@ public class Bullet : MonoBehaviour, IMovable
         // Get the Rigidbody2D component attached to this object
         rb = GetComponent<Rigidbody2D>();
     }
-    
-   
 
     // Implements the movement behavior defined in the IMovable interface
     public void MoveForward()
     {
-        // Set the initial velocity of the bullet projectile to move upward
         rb.velocity = Vector2.up * initialVelocity;
     }
 
-    public void Acceleration()
+    // Applies acceleration to the bullet projectile
+    public void ApplyAcceleration()
     { 
         // Calculate the force to add to the bullet projectile to simulate acceleration
-        Vector2 ForceToAdd = Vector2.up * acceleration * Time.deltaTime;
-
-        // Apply the calculated force to the Rigidbody2D component of the bullet projectile
-        rb.AddForce(ForceToAdd);
+        Vector2 forceToAdd = Vector2.up * acceleration * Time.deltaTime;
+        rb.AddForce(forceToAdd);
     }
 
 }
